@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "minivest-static",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "C:\\Users\\veron\\AppData\\Local\\Temp\\claude\\1e8a598db3ce3e40\\bae9e820-b7c6-4bf5-9dec-19590ff97c38\\scratchpad\\serve.ps1"],
+      "port": 8123
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiniVest – משקיעים פוגשים עסקים קטנים</title>
+<meta name="description" content="MiniVest – אפליקציה שמחברת עסקים קטנים בישראל למשקיעים פרטיים בפורמט החלקה. השקעה החל מ-500 ש״ח.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="MiniVest">
+      <span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+      MiniVest
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#how">איך זה עובד</a>
+      <a href="#categories">קטגוריות</a>
+      <a href="#range">טווח השקעה</a>
+      <a href="explore.html">גלו</a>
+      <a href="#faq">שאלות נפוצות</a>
+    </nav>
+    <a href="#join" class="btn btn-primary" id="joinBtn">הצטרפות</a>
+    <button class="menu-btn" id="menuBtn" aria-label="תפריט" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">עסקים קטנים · משקיעים פרטיים · ישראל</span>
+      <h1>ההשקעה הבאה שלך<br>במרחק <em>החלקה אחת</em></h1>
+      <p class="lead">MiniVest מחברת בין עסקים קטנים בישראל לבין משקיעים פרטיים. החליקו ימינה על עסקים שמדברים אליכם, קבלו התאמה, והתחילו להשקיע כבר מ-500 ש״ח.</p>
+      <div class="hero-ctas">
+        <a href="#join" class="btn btn-primary" data-role="investor">אני רוצה להשקיע</a>
+        <a href="#join" class="btn btn-ghost" data-role="business">יש לי עסק שמגייס</a>
+      </div>
+      <div class="hero-facts">
+        <div class="fact"><b>₪500</b><span>השקעה מינימלית</span></div>
+        <div class="fact"><b>דו-כיווני</b><span>סינון לפי קטגוריות</span></div>
+        <div class="fact"><b>100%</b><span>עסקים ישראליים</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="phone" aria-label="הדגמת האפליקציה">
+        <div class="screen">
+          <div class="screen-top">
+            <span>גלו עסקים</span>
+            <span class="filter-pill">⚙ מזון · טכנולוגיה · אופנה</span>
+          </div>
+          <div class="deck" id="deck"></div>
+          <div class="actions">
+            <button class="act nope" id="nopeBtn" aria-label="לא מתאים">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+            <button class="act like" id="likeBtn" aria-label="מעניין אותי">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg>
+            </button>
+          </div>
+          <div class="match" id="match">
+            <div style="font-size:3rem">🤝</div>
+            <h4>יש התאמה!</h4>
+            <p id="matchText">גם בעל העסק מעוניין בך. אפשר להתחיל לדבר.</p>
+          </div>
+        </div>
+      </div>
+      <p class="demo-hint">נסו בעצמכם: גררו את הכרטיס או לחצו על הכפתורים</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="center">
+  <div class="wrap">
+    <span class="eyebrow">איך זה עובד</span>
+    <h2>פשוט כמו להחליק ימינה</h2>
+    <p class="lead">שני צדדים, אפליקציה אחת. כל צד מגדיר מה הוא מחפש, ומקבל רק התאמות רלוונטיות.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-tab="investors">למשקיעים</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="owners">לבעלי עסקים</button>
+    </div>
+    <div class="steps" id="tab-investors">
+      <div class="step"><div class="step-n">1</div><h3>בוחרים קטגוריות</h3><p>מסמנים את התחומים שמעניינים אתכם: מזון, טכנולוגיה, אופנה, בריאות ועוד.</p></div>
+      <div class="step"><div class="step-n">2</div><h3>מחליקים על עסקים</h3><p>מקבלים כרטיסי עסקים מסוננים. ימינה למה שמעניין, שמאלה למה שלא.</p></div>
+      <div class="step"><div class="step-n">3</div><h3>מקבלים התאמה</h3><p>כשגם בעל העסק מאשר, נפתח צ׳אט ישיר לשאלות, פרטים ופגישת היכרות.</p></div>
+      <div class="step"><div class="step-n">4</div><h3>משקיעים בסכום שלכם</h3><p>החל מ-500 ש״ח ועד התקרה שבעל העסק קבע. אתם מחליטים כמה.</p></div>
+    </div>
+    <div class="steps" id="tab-owners" hidden>
+      <div class="step"><div class="step-n">1</div><h3>יוצרים פרופיל עסק</h3><p>מספרים על העסק, מעלים תמונות ומגדירים את יעד הגיוס ומטרתו.</p></div>
+      <div class="step"><div class="step-n">2</div><h3>קובעים את התנאים</h3><p>אתם קובעים את סכום הגיוס המקסימלי ואת סוג המשקיעים שאתם מחפשים.</p></div>
+      <div class="step"><div class="step-n">3</div><h3>מחליקים על משקיעים</h3><p>מסננים משקיעים לפי תחומי עניין, ניסיון וטווח השקעה, ומאשרים את המתאימים.</p></div>
+      <div class="step"><div class="step-n">4</div><h3>מגייסים ומתקדמים</h3><p>אחרי התאמה מדברים ישירות, סוגרים פרטים ומקבלים את ההון לצמיחה.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" class="cats-section center">
+  <div class="wrap">
+    <span class="eyebrow">סינון חכם</span>
+    <h2>רואים רק את מה שרלוונטי</h2>
+    <p class="lead">המשקיעים בוחרים את הקטגוריות שהם מחפשים, ובעלי העסקים בוחרים את סוג המשקיעים שמתאים להם. נסו לסמן כמה:</p>
+    <div class="cats" id="cats">
+      <button class="chip" aria-pressed="true">🍞 מזון ומסעדנות</button>
+      <button class="chip" aria-pressed="true">💻 טכנולוגיה</button>
+      <button class="chip" aria-pressed="true">👗 אופנה</button>
+      <button class="chip" aria-pressed="false">🏋️ בריאות וכושר</button>
+      <button class="chip" aria-pressed="false">🌱 חקלאות וקיימות</button>
+      <button class="chip" aria-pressed="false">✈️ תיירות ופנאי</button>
+      <button class="chip" aria-pressed="false">📚 חינוך</button>
+      <button class="chip" aria-pressed="false">🛍️ קמעונאות</button>
+      <button class="chip" aria-pressed="false">🎨 אמנות ויצירה</button>
+      <button class="chip" aria-pressed="false">🔧 שירותים מקצועיים</button>
+      <button class="chip" aria-pressed="false">🐾 חיות מחמד</button>
+      <button class="chip" aria-pressed="false">💄 יופי וטיפוח</button>
+    </div>
+    <p class="cats-note" id="catsNote"></p>
+  </div>
+</section>
+
+<!-- RANGE -->
+<section id="range">
+  <div class="wrap range-grid">
+    <div>
+      <span class="eyebrow">טווח השקעה</span>
+      <h2>מתחילים מ-500 ש״ח.<br>התקרה נקבעת על ידי בעל העסק.</h2>
+      <p class="lead">לא צריך להיות משקיע מקצועי כדי לתמוך בעסק מקומי ולהיות שותף להצלחה שלו.</p>
+      <ul class="checks">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span><b>סף כניסה נמוך:</b> השקעה מינימלית של 500 ש״ח בלבד.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span><b>בעל העסק קובע:</b> כל עסק מגדיר את סכום הגיוס לפי הצורך שלו.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span><b>פיזור קל:</b> אפשר לחלק את התקציב בין כמה עסקים שאהבתם.</span></li>
+      </ul>
+    </div>
+    <div class="calc">
+      <label for="amount">כמה תרצו להשקיע?</label>
+      <div class="calc-amount" id="amountOut">₪5,000</div>
+      <input type="range" id="amount" min="500" max="50000" step="500" value="5000">
+      <div class="range-ends"><span>₪500</span><span>₪50,000+</span></div>
+      <div class="calc-out">
+        <div><b id="bizCount">10</b><span>עסקים שאפשר לתמוך בהם בסכום המינימלי</span></div>
+        <div><b id="perBiz">₪1,000</b><span>לכל עסק, אם תפזרו בין 5 עסקים</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="center" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">למה MiniVest</span>
+    <h2>השקעה שמרגישה אישית</h2>
+    <div class="features" style="text-align:right">
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div><h3>התאמה דו-כיוונית</h3><p>התאמה נוצרת רק כששני הצדדים מעוניינים, כך שכל שיחה מתחילה ברגל ימין.</p></div>
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21V12h6v9"/></svg></div><h3>עסקים מהשכונה</h3><p>מאפייה, סטודיו או סטארט-אפ קטן: תומכים בכלכלה המקומית ובאנשים שמאחוריה.</p></div>
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>צ׳אט ישיר</h3><p>אחרי התאמה מדברים ישירות עם בעל העסק, שואלים שאלות ומכירים לפני שמחליטים.</p></div>
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10M10 21V4M16 21v-7M22 21H2"/></svg></div><h3>שקיפות מלאה</h3><p>יעד גיוס, התקדמות ומטרת הכסף מוצגים בכל כרטיס, בלי אותיות קטנות.</p></div>
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></svg></div><h3>סינון מדויק</h3><p>קטגוריות, אזור גיאוגרפי וטווח השקעה: מגדירים פעם אחת ורואים רק את הרלוונטי.</p></div>
+      <div class="feature"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3>פרופילים מאומתים</h3><p>כל עסק וכל משקיע עוברים תהליך אימות לפני שהם מופיעים באפליקציה.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="center" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">שאלות נפוצות</span>
+    <h2>יש שאלות? יש תשובות</h2>
+    <div class="faq" style="text-align:right">
+      <details><summary>מה הסכום המינימלי להשקעה?</summary><p>אפשר להשקיע בעסק החל מ-500 ש״ח. הסכום המקסימלי לכל גיוס נקבע על ידי בעל העסק לפי הצורך שלו.</p></details>
+      <details><summary>איך עובד הסינון?</summary><p>משקיעים בוחרים את הקטגוריות שמעניינות אותם ורואים רק עסקים מאותם תחומים. בעלי עסקים מסננים באותה דרך את המשקיעים שמתאימים להם.</p></details>
+      <details><summary>מה קורה אחרי שיש התאמה?</summary><p>כששני הצדדים החליקו ימינה, נפתח צ׳אט ישיר ביניהם. שם אפשר לשאול שאלות, לקבל מידע נוסף ולקבוע פגישה לפני החלטה על השקעה.</p></details>
+      <details><summary>אילו עסקים יכולים להצטרף?</summary><p>עסקים קטנים הרשומים בישראל, מכל תחום: מסעדנות, קמעונאות, טכנולוגיה, שירותים ועוד.</p></details>
+      <details><summary>האם האפליקציה בחינם?</summary><p>ההרשמה וההחלקה חינמיות לשני הצדדים. פרטים על עמלות יפורסמו לקראת ההשקה.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2 id="joinTitle">מצטרפים ובונים עמוד אישי</h2>
+        <p class="lead">ספרו על עצמכם ועל העסק שלכם, וקבלו עמוד אישי שמציג אתכם בפני משקיעים ובעלי עסקים אחרים באפליקציה.</p>
+      </div>
+      <ul class="join-points">
+        <li>🧑‍💼 משקיעים: טווח השקעה מ-₪500</li>
+        <li>🏪 עסקים: אתם קובעים את יעד הגיוס</li>
+        <li>🔒 האימייל לא מוצג בעמוד, רק אחרי התאמה</li>
+      </ul>
+    </div>
+
+    <form id="joinForm" class="join-card" novalidate>
+      <div class="role-toggle" role="group" aria-label="אני">
+        <button type="button" class="role-btn" data-pick="investor" aria-pressed="true">🧑‍💼 אני משקיע/ה</button>
+        <button type="button" class="role-btn" data-pick="business" aria-pressed="false">🏪 יש לי עסק</button>
+      </div>
+
+      <div class="form-grid">
+        <div class="field"><label for="f-name">שם מלא</label><input id="f-name" name="name" type="text" maxlength="60" autocomplete="name"><span class="err"></span></div>
+        <div class="field"><label for="f-email">אימייל (לא יוצג בעמוד)</label><input id="f-email" name="email" type="email" dir="ltr" autocomplete="email"><span class="err"></span></div>
+        <div class="field"><label for="f-city">עיר</label><input id="f-city" name="city" type="text" maxlength="40" autocomplete="address-level2"><span class="err"></span></div>
+        <div class="field"><label for="f-photo">תמונה (לא חובה)</label><input id="f-photo" name="photo" type="file" accept="image/*"><span class="err"></span></div>
+
+        <div class="field full" data-only="business"><label for="f-biz">שם העסק</label><input id="f-biz" name="bizName" type="text" maxlength="60"><span class="err"></span></div>
+        <div class="field" data-only="business"><label for="f-bizcat">קטגוריה ראשית של העסק</label><select id="f-bizcat" name="bizCategory"></select><span class="err"></span></div>
+        <div class="field" data-only="business"><label for="f-years">שנות פעילות</label><input id="f-years" name="years" type="number" min="0" max="100" inputmode="numeric"><span class="err"></span></div>
+        <div class="field" data-only="business"><label for="f-goal">יעד גיוס (₪)</label><input id="f-goal" name="goal" type="number" min="500" step="100" inputmode="numeric" placeholder="לפחות 500"><span class="err"></span></div>
+        <div class="field" data-only="business"><label for="f-link">אתר או אינסטגרם (לא חובה)</label><input id="f-link" name="link" type="url" dir="ltr" placeholder="https://"><span class="err"></span></div>
+        <div class="field full" data-only="business"><label for="f-purpose">למה אתם מגייסים?</label><input id="f-purpose" name="purpose" type="text" maxlength="120" placeholder="לדוגמה: פתיחת סניף שני"><span class="err"></span></div>
+
+        <div class="field" data-only="investor"><label for="f-min">השקעה מינימלית (₪)</label><input id="f-min" name="minInvest" type="number" min="500" step="100" value="500" inputmode="numeric"><span class="err"></span></div>
+        <div class="field" data-only="investor"><label for="f-max">השקעה מקסימלית (₪)</label><input id="f-max" name="maxInvest" type="number" min="500" step="100" value="5000" inputmode="numeric"><span class="err"></span></div>
+        <div class="field full" data-only="investor"><label for="f-exp">רמת ניסיון</label><select id="f-exp" name="experience"></select><span class="err"></span></div>
+        <div class="field full" data-only="investor"><label id="l-brings">מה אני מביא/ה מעבר לכסף? (לא חובה)</label><div class="chips-row" id="f-brings" role="group" aria-labelledby="l-brings"></div></div>
+
+        <div class="field full"><label for="f-about" id="l-about">קצת עליי</label><textarea id="f-about" name="about" rows="3" maxlength="300"></textarea><span class="err"></span></div>
+        <div class="field full"><label id="l-cats">אילו קטגוריות מעניינות אותי?</label><div class="chips-row" id="f-cats" role="group" aria-labelledby="l-cats"></div><span class="err"></span></div>
+      </div>
+
+      <button class="btn btn-primary submit" type="submit">צרו לי עמוד אישי</button>
+      <p class="form-note" id="formNote">הפרטים נשמרים בדפדפן הזה בלבד (גרסת הדגמה, אין שרת).</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#" class="logo"><span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.2 5.2 3 1.6-1.8 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>MiniVest</a>
+      <nav><a href="#how">איך זה עובד</a><a href="#categories">קטגוריות</a><a href="#range">טווח השקעה</a><a href="explore.html">גלו</a><a href="#faq">שאלות נפוצות</a></nav>
+      <span>© 2026 MiniVest. כל הזכויות שמורות.</span>
+    </div>
+    <p class="disclaimer">אין באמור באתר ובאפליקציה משום ייעוץ השקעות או המלצה להשקיע בעסק מסוים. השקעה בעסקים קטנים כרוכה בסיכון, לרבות אובדן הסכום המושקע. יש לבחון כל השקעה בהתאם לנסיבות האישיות.</p>
+  </div>
+</footer>
+
+<script src="store.js"></script>
+<script>
+// Demo business cards for the swipe simulator (illustrative only)
+const BUSINESSES = [
+  {name:"מאפיית הבוקר", loc:"חיפה · מזון ומסעדנות", emoji:"🥐", bg:"linear-gradient(135deg,#ffd8a8,#ffa94d)", desc:"מאפייה שכונתית שרוצה לפתוח סניף שני ליד הנמל.", raised:62, goal:80000},
+  {name:"קוד לילדים", loc:"תל אביב · חינוך וטכנולוגיה", emoji:"🧑‍💻", bg:"linear-gradient(135deg,#a5d8ff,#4dabf7)", desc:"חוגי תכנות לילדים, מגייסים לפיתוח פלטפורמה אונליין.", raised:35, goal:120000},
+  {name:"סטודיו נול", loc:"ירושלים · אופנה", emoji:"🧵", bg:"linear-gradient(135deg,#fcc2d7,#f783ac)", desc:"מותג בגדים ממוחזרים, מגייסים למכונת תפירה תעשייתית.", raised:81, goal:45000},
+  {name:"חוות השקד", loc:"עמק יזרעאל · חקלאות", emoji:"🌱", bg:"linear-gradient(135deg,#b2f2bb,#51cf66)", desc:"חווה אורגנית משפחתית שמרחיבה משלוחים ישירות לבית.", raised:48, goal:150000},
+  {name:"פיט בשכונה", loc:"באר שבע · בריאות וכושר", emoji:"🏋️", bg:"linear-gradient(135deg,#d0bfff,#9775fa)", desc:"סטודיו אימונים קטן שמוסיף חדר אימוני קבוצות.", raised:22, goal:60000},
+];
+const fmt = MV.fmt;
+const deck = document.getElementById("deck");
+const match = document.getElementById("match");
+let idx = 0, busy = false;
+
+function cardHTML(b){
+  return `<span class="stamp like">LIKE</span><span class="stamp nope">NOPE</span>
+  <div class="card-img" style="background:${b.bg}"><span class="card-tag">מינימום ₪500</span>${b.emoji}</div>
+  <div class="card-body"><h3>${b.name}</h3><div class="card-loc">${b.loc}</div><p>${b.desc}</p>
+  <div class="bar"><i style="width:${b.raised}%"></i></div>
+  <div class="card-meta"><span><b>${b.raised}%</b> גויס</span><span>יעד <b>${fmt(b.goal)}</b></span></div></div>`;
+}
+function render(){
+  deck.innerHTML = "";
+  for(let i=1;i>=0;i--){
+    const b = BUSINESSES[(idx+i)%BUSINESSES.length];
+    const c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML = cardHTML(b);
+    if(i===1){c.style.transform="scale(.94) translateY(12px)";c.style.opacity=".7"}
+    else attachDrag(c);
+    deck.appendChild(c);
+  }
+}
+function swipe(dir){
+  if(busy) return; busy = true;
+  const top = deck.lastElementChild, next = deck.firstElementChild;
+  top.style.transform = `translateX(${dir*420}px) rotate(${dir*24}deg)`;
+  top.style.opacity = "0";
+  top.querySelector(dir>0?".stamp.like":".stamp.nope").style.opacity = 1;
+  next.style.transform = ""; next.style.opacity = "1";
+  const liked = dir>0, b = BUSINESSES[idx%BUSINESSES.length];
+  setTimeout(()=>{
+    idx++;
+    if(liked && Math.random() < .6){
+      document.getElementById("matchText").textContent = `גם ${b.name} מעוניינים בך. אפשר להתחיל לדבר!`;
+      match.classList.add("show");
+      setTimeout(()=>{match.classList.remove("show");render();busy=false},1600);
+    } else {render();busy=false}
+  },350);
+}
+function attachDrag(card){
+  let sx=0, dx=0, down=false;
+  const like = card.querySelector(".stamp.like"), nope = card.querySelector(".stamp.nope");
+  card.addEventListener("pointerdown",e=>{if(busy)return;down=true;sx=e.clientX;dx=0;card.classList.add("dragging");card.setPointerCapture(e.pointerId)});
+  card.addEventListener("pointermove",e=>{
+    if(!down) return; dx = e.clientX - sx;
+    card.style.transform = `translateX(${dx}px) rotate(${dx/14}deg)`;
+    like.style.opacity = Math.max(0, dx/100); nope.style.opacity = Math.max(0, -dx/100);
+  });
+  const end=()=>{
+    if(!down) return; down=false; card.classList.remove("dragging");
+    if(Math.abs(dx)>90) swipe(Math.sign(dx));
+    else {card.style.transform="";like.style.opacity=0;nope.style.opacity=0}
+  };
+  card.addEventListener("pointerup",end); card.addEventListener("pointercancel",end);
+}
+document.getElementById("likeBtn").onclick = ()=>swipe(1);
+document.getElementById("nopeBtn").onclick = ()=>swipe(-1);
+render();
+
+// Tabs
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected", x===t));
+  document.getElementById("tab-investors").hidden = t.dataset.tab!=="investors";
+  document.getElementById("tab-owners").hidden = t.dataset.tab!=="owners";
+}));
+
+// Category chips
+const chips = [...document.querySelectorAll("#cats .chip")];
+const catsNote = document.getElementById("catsNote");
+function updateCats(){
+  const n = chips.filter(c=>c.getAttribute("aria-pressed")==="true").length;
+  catsNote.textContent = n ? `נבחרו ${n} קטגוריות. תראו רק עסקים מהתחומים האלה.` : "לא נבחרו קטגוריות. סמנו לפחות אחת כדי לראות עסקים.";
+}
+chips.forEach(c=>c.addEventListener("click",()=>{c.setAttribute("aria-pressed", c.getAttribute("aria-pressed")!=="true");updateCats()}));
+updateCats();
+
+// Investment calculator
+const amount = document.getElementById("amount");
+function updateCalc(){
+  const v = +amount.value;
+  document.getElementById("amountOut").textContent = fmt(v) + (v>=50000?"+":"");
+  document.getElementById("bizCount").textContent = Math.floor(v/500);
+  document.getElementById("perBiz").textContent = fmt(Math.max(500, Math.round(v/5/100)*100));
+}
+amount.addEventListener("input",updateCalc); updateCalc();
+
+// ---- Signup form: builds a profile, saves it via MV.save, then opens profile.html ----
+const form = document.getElementById("joinForm");
+let role = "investor", photoData = null, editing = null;
+
+function chipRow(el, items, selected){
+  el.innerHTML = items.map(([id,label])=>`<button type="button" class="chip" data-id="${id}" aria-pressed="${selected.includes(id)}">${label}</button>`).join("");
+  el.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>c.setAttribute("aria-pressed", c.getAttribute("aria-pressed")!=="true")));
+}
+const picked = el => [...el.querySelectorAll('.chip[aria-pressed="true"]')].map(c=>c.dataset.id);
+const opts = items => items.map(([id,label])=>`<option value="${id}">${label}</option>`).join("");
+
+chipRow(document.getElementById("f-cats"), MV.CATEGORIES.map(c=>[c.id, c.emoji+" "+c.label]), []);
+chipRow(document.getElementById("f-brings"), Object.entries(MV.BRINGS), []);
+document.getElementById("f-bizcat").innerHTML = opts(MV.CATEGORIES.map(c=>[c.id, c.emoji+" "+c.label]));
+document.getElementById("f-exp").innerHTML = opts(Object.entries(MV.EXPERIENCE));
+
+function setRole(r){
+  role = r;
+  document.querySelectorAll(".role-btn").forEach(b=>b.setAttribute("aria-pressed", b.dataset.pick===r));
+  form.querySelectorAll("[data-only]").forEach(el=>el.hidden = el.dataset.only!==r);
+  document.getElementById("l-about").textContent = r==="business" ? "קצת על העסק שלנו" : "קצת עליי";
+  document.getElementById("l-cats").textContent = r==="business" ? "באילו תחומים העסק פעיל?" : "אילו קטגוריות מעניינות אותי?";
+}
+document.querySelectorAll(".role-btn").forEach(b=>b.addEventListener("click",()=>setRole(b.dataset.pick)));
+// Hero CTAs preselect the role
+document.querySelectorAll("[data-role]").forEach(a=>a.addEventListener("click",()=>setRole(a.dataset.role)));
+setRole("investor");
+
+document.getElementById("f-photo").addEventListener("change", async e=>{
+  const f = e.target.files[0]; photoData = null;
+  if(!f) return;
+  try{ photoData = await MV.resizeImage(f); }catch(err){ showErr("photo","לא הצלחנו לקרוא את התמונה, נסו קובץ אחר."); }
+});
+
+function showErr(name, msg){
+  const input = form.elements[name] || document.getElementById("f-"+name);
+  const field = input && input.closest ? input.closest(".field") : null;
+  const span = field && field.querySelector(".err");
+  if(span) span.textContent = msg;
+  return !!msg;
+}
+function clearErrs(){ form.querySelectorAll(".err").forEach(s=>s.textContent=""); }
+
+function validate(v){
+  clearErrs();
+  let bad = false;
+  const e = (n,m)=>{ showErr(n,m); bad = true; };
+  if(!v.name) e("name","נא למלא שם.");
+  if(!/^\S+@\S+\.\S+$/.test(v.email)) e("email","נא למלא כתובת אימייל תקינה.");
+  if(!v.city) e("city","נא למלא עיר.");
+  if(role==="business"){
+    if(!v.bizName) e("bizName","נא למלא את שם העסק.");
+    if(!(v.goal>=500)) e("goal","יעד הגיוס חייב להיות לפחות ₪500.");
+    if(!v.purpose) e("purpose","נא לכתוב בקצרה למה מגייסים.");
+  } else {
+    if(!(v.minInvest>=500)) e("minInvest","הסכום המינימלי הוא ₪500.");
+    if(!(v.maxInvest>=v.minInvest)) e("maxInvest","הסכום המקסימלי צריך להיות לפחות כמו המינימום.");
+  }
+  if(!v.categories.length){ bad = true; document.getElementById("f-cats").closest(".field").querySelector(".err").textContent = "נא לבחור לפחות קטגוריה אחת."; }
+  return !bad;
+}
+
+form.addEventListener("submit", e=>{
+  e.preventDefault();
+  const g = n => form.elements[n].value.trim();
+  const v = {
+    role, id: editing && editing.id, created: editing ? editing.created : Date.now(),
+    name: g("name"), email: g("email"), city: g("city"), about: g("about"),
+    categories: picked(document.getElementById("f-cats")),
+    photo: photoData || (editing && editing.photo) || null,
+  };
+  if(role==="business"){
+    Object.assign(v, {bizName:g("bizName"), bizCategory:g("bizCategory"), years:Number(g("years"))||0, goal:Number(g("goal")), purpose:g("purpose"), link:g("link"), raised:0});
+  } else {
+    Object.assign(v, {minInvest:Number(g("minInvest")), maxInvest:Number(g("maxInvest")), experience:g("experience"), brings:picked(document.getElementById("f-brings"))});
+  }
+  if(!validate(v)){ const first = form.querySelector(".err:not(:empty)"); if(first) first.scrollIntoView({block:"center",behavior:"smooth"}); return; }
+  if(v.link && !/^https?:\/\//i.test(v.link)) v.link = "https://" + v.link;
+  const id = MV.save(v);
+  if(!id){ document.getElementById("formNote").textContent = "לא הצלחנו לשמור בדפדפן (אחסון חסום או מלא). נסו תמונה קטנה יותר או דפדפן אחר."; return; }
+  location.href = "profile.html?id=" + encodeURIComponent(id) + (editing ? "" : "&new=1");
+});
+
+// Edit mode: ?edit=1 refills the form with the saved profile
+(function(){
+  const me = MV.myId();
+  if(!me || !/[?&]edit=1/.test(location.search)) return;
+  editing = MV.get(me);
+  if(!editing) return;
+  setRole(editing.role);
+  const set = (n,val)=>{ if(val!=null && form.elements[n]) form.elements[n].value = val; };
+  ["name","email","city","about","bizName","bizCategory","years","goal","purpose","link","minInvest","maxInvest","experience"].forEach(n=>set(n, editing[n]));
+  chipRow(document.getElementById("f-cats"), MV.CATEGORIES.map(c=>[c.id, c.emoji+" "+c.label]), editing.categories||[]);
+  chipRow(document.getElementById("f-brings"), Object.entries(MV.BRINGS), editing.brings||[]);
+  document.getElementById("joinTitle").textContent = "עריכת העמוד האישי";
+  form.querySelector(".submit").textContent = "שמרו שינויים";
+})();
+
+</script>
+</body>
+</html>
